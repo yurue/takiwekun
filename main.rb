@@ -18,7 +18,7 @@ require './umbrellaIndex'
 require './ultravioletIndex'
 require './beerIndex'
 
-weather_index = get_weather_index()
+weather_index = get_weather_index
 
 # 【何時に何を呟くか　CRON実行　→ 5 7,9,12,18,21 * * * 】
 #  7時	:	今日の天気 get_today_weather を実行,
@@ -43,12 +43,12 @@ when 7 then
   # 7時に...
 
   # 今日の天気をつぶやく
-  todayWeather = get_today_weather()
+  todayWeather = get_today_weather
   puts todayWeather
   do_tweet(todayWeather)
 
   # 今日のアウトラインをつぶやく
-  todayOutline = get_outline_weather()
+  todayOutline = get_outline_weather
   puts todayOutline
   do_tweet(todayOutline)
 
@@ -82,7 +82,7 @@ when 12 then
   # 12時に...
 
   # 今日のこれからのアウトラインをつぶやく
-  todayOutline = get_outline_weather()
+  todayOutline = get_outline_weather
   puts todayOutline
   do_tweet(todayOutline)
 
@@ -90,7 +90,7 @@ when 18 then
   # 18時に...
 
   # 明日の天気をつぶやく
-  tomorrowWeather = get_tomorrow_weather()
+  tomorrowWeather = get_tomorrow_weather
   puts tomorrowWeather
   do_tweet(tomorrowWeather)
 
@@ -108,12 +108,12 @@ when 21 then
   # 21時に...
 
   # 明日の天気をつぶやく
-  tomorrowWeather = get_tomorrow_weather()
+  tomorrowWeather = get_tomorrow_weather
   puts tomorrowWeather
   do_tweet(tomorrowWeather)
 
   # 今日明日にかけてのアウトラインをつぶやく
-  todayOutline = get_outline_weather()
+  todayOutline = get_outline_weather
   puts todayOutline
   do_tweet(todayOutline)
 
@@ -128,5 +128,5 @@ when 21 then
   do_tweet(todayClothes)
 
 else
-  puts "エラー：どこにも当てはまらない時間のため何も呟かない"
+  puts 'エラー：どこにも当てはまらない時間のため何も呟かない'
 end
